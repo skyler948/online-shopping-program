@@ -1,5 +1,6 @@
 package frames;
 
+import image.ImageSheet;
 import items.FoodItem;
 import items.Item;
 
@@ -14,9 +15,11 @@ public class ShoppingFrame extends JFrame {
         setTitle("Online Shopping Platform");
         setLocationRelativeTo(null);
 
+        ImageSheet images = new ImageSheet(125, "/sheet.png");
+
         Item[] items = new Item[]{
-                new FoodItem("Apple", 0.99f, 0.017f, 150, 2, 0, 0),
-                new FoodItem("Pear", 1.59f, 2.3f, 150, 2, 0, 0),
+                new FoodItem(images.getIcons()[0], "Apple", 0.99f, 0.017f, 150, 2, 0, 0),
+                new FoodItem(images.getIcons()[1], "Pear", 1.59f, 2.3f, 150, 2, 0, 0),
         };
 
         JPanel itemPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
@@ -25,7 +28,7 @@ public class ShoppingFrame extends JFrame {
             itemPanel.add(item);
         }
 
-        add(itemPanel, BorderLayout.NORTH);
+        add(itemPanel, BorderLayout.CENTER);
 
         setVisible(true);
     }

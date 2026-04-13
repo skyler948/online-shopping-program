@@ -1,19 +1,21 @@
 package items;
 
+import javax.swing.*;
+
 public class FoodItem extends Item {
 
     private int calories;
     private int sugarGrams;
     private int proteinGrams;
-    private int sodiumGrams;
+    private int sodiumMilligrams;
 
-    public FoodItem(String name, float price, float weightKilograms,
-                    int calories, int sugarGrams, int proteinGrams, int sodiumGrams) {
-        super(name, price, weightKilograms);
+    public FoodItem(ImageIcon img, String name, float price, float weightKilograms,
+                    int calories, int sugarGrams, int proteinGrams, int sodiumMilligrams) {
+        super(img, name, price, weightKilograms);
         this.calories = Math.max(0, calories);
         this.sugarGrams = Math.max(0, sugarGrams);
         this.proteinGrams = Math.max(0, proteinGrams);
-        this.sodiumGrams = Math.max(0, sodiumGrams);
+        this.sodiumMilligrams = Math.max(0, sodiumMilligrams);
 
         category = "Food";
     }
@@ -30,8 +32,8 @@ public class FoodItem extends Item {
         return proteinGrams;
     }
 
-    public int getSodiumGrams() {
-        return sodiumGrams;
+    public int getSodiumMilligrams() {
+        return sodiumMilligrams;
     }
 
 }

@@ -8,11 +8,13 @@ import java.awt.*;
 public abstract class Item extends JPanel {
 
     private static final float MIN_PRICE = 0.01f;
-    private static final int IMG_BUTTON_SIZE = 160;
+    private static final int IMG_BUTTON_SIZE = 135;
     private static final int COUNT_BUTTON_SIZE = 45;
     private static final byte MAX_ITEM_COUNT = 99;
 
     protected String category;
+
+    private ImageIcon img;
 
     protected String name;
     protected float price;
@@ -27,7 +29,8 @@ public abstract class Item extends JPanel {
 
     private byte itemCount;
 
-    public Item(String name, float price, float weightKilograms) {
+    public Item(ImageIcon img, String name, float price, float weightKilograms) {
+        this.img = img;
         this.name = name;
         this.price = Math.max(MIN_PRICE, price);
         this.weightKilograms = Math.max(0.f, weightKilograms);
@@ -48,7 +51,7 @@ public abstract class Item extends JPanel {
 
         gbc.gridy = 1;
 
-        imgButton = new JButton(); // TODO: Add image to imgButton. Use a spritesheet :)
+        imgButton = new JButton(img);
         imgButton.setPreferredSize(new Dimension(IMG_BUTTON_SIZE, IMG_BUTTON_SIZE));
         add(imgButton, gbc);
 
