@@ -18,8 +18,10 @@ public class ShoppingFrame extends JFrame {
         ImageSheet images = new ImageSheet(125, "/sheet.png");
 
         Item[] items = new Item[]{
-                new FoodItem(images.getIcons()[0], "Apple", 0.99f, 0.017f, 150, 2, 0, 0),
-                new FoodItem(images.getIcons()[1], "Pear", 1.59f, 2.3f, 150, 2, 0, 0),
+                new FoodItem(images.getIcons()[0], "Apple", 0.99f, 0.017f, 150,
+                        2.f, 0.f, 0.f, 0.f, 0.f, 0.f, "1 Apple"),
+                new FoodItem(images.getIcons()[1], "Pear", 1.59f, 2.3f, 150,
+                        2.f, 0.f, 0.f, 0.f, 0.f, 0.f, "1 Pear"),
         };
 
         JPanel itemPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
