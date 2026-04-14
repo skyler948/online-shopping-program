@@ -1,6 +1,7 @@
 package items;
 
 import listeners.ItemButtonListener;
+import menubars.ShoppingMenuBar;
 
 import javax.swing.*;
 import java.awt.*;
@@ -29,7 +30,9 @@ public abstract class Item extends JPanel {
 
     private byte itemCount;
 
-    public Item(ImageIcon img, String name, float price, float weightKilograms) {
+    private ShoppingMenuBar bar;
+
+    public Item(ShoppingMenuBar bar, ImageIcon img, String name, float price, float weightKilograms) {
         this.img = img;
         this.name = name;
         this.price = Math.max(MIN_PRICE, price);
@@ -100,7 +103,7 @@ public abstract class Item extends JPanel {
 
         // -- Listeners --
 
-        listener = new ItemButtonListener(this);
+        listener = new ItemButtonListener(this, bar);
         imgButton.addActionListener(listener);
         addButton.addActionListener(listener);
         subtractButton.addActionListener(listener);

@@ -1,6 +1,7 @@
 package listeners;
 
 import items.Item;
+import menubars.ShoppingMenuBar;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,9 +9,11 @@ import java.awt.event.ActionListener;
 public class ItemButtonListener implements ActionListener {
 
     private Item item;
+    private ShoppingMenuBar bar;
 
-    public ItemButtonListener(Item item) {
+    public ItemButtonListener(Item item, ShoppingMenuBar bar) {
         this.item = item;
+        this.bar = bar;
     }
 
     @Override
@@ -21,8 +24,10 @@ public class ItemButtonListener implements ActionListener {
 
         if (e.getSource() == item.getAddButton()) {
             item.modifyItemCount((byte) 1);
+            bar.updateSubtotalLabel();
         } else if (e.getSource() == item.getSubtractButton()) {
             item.modifyItemCount((byte) -1);
+            bar.updateSubtotalLabel();
         }
     }
 
