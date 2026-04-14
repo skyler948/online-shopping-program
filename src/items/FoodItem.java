@@ -28,7 +28,8 @@ public class FoodItem extends Item {
         category = "Food";
     }
 
-    public String getNutritionLabel() {
+    @Override
+    public String getInformation() {
         StringBuilder label = new StringBuilder();
 
         label.append(String.format("Serving size: %s\nCalories: %d", servingSize, calories));

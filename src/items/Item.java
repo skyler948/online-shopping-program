@@ -46,7 +46,7 @@ public abstract class Item extends JPanel {
         gbc.gridy = 0;
 
         JLabel nameLabel = new JLabel(name);
-        nameLabel.setFont(new Font("Arial", Font.BOLD, 20));
+        nameLabel.setFont(new Font("Arial", Font.BOLD, 14));
         add(nameLabel, gbc);
 
         gbc.gridy = 1;
@@ -65,7 +65,7 @@ public abstract class Item extends JPanel {
 
         String weight = (weightKilograms >= 1) ?
                 String.format("%.2fkg", weightKilograms) : String.format("%.2fg", weightKilograms * 1000);
-        JLabel weightLabel = new JLabel(weight);
+        JLabel weightLabel = new JLabel((weightKilograms != 0) ? weight : "N/A");
         infoPanel.add(weightLabel, BorderLayout.EAST);
 
         gbc.gridy = 2;
@@ -105,6 +105,8 @@ public abstract class Item extends JPanel {
         addButton.addActionListener(listener);
         subtractButton.addActionListener(listener);
     }
+
+    public abstract String getInformation();
 
     public void modifyItemCount(byte amount) {
         itemCount += amount;
