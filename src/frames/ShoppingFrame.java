@@ -57,6 +57,23 @@ public class ShoppingFrame extends JFrame {
         return subtotal;
     }
 
+    public void setCategoryVisibility(String category, boolean enabled) {
+        for (Item item : items) {
+            if (item.getCategory().equals(category)) {
+                item.setVisible(enabled);
+            }
+        }
+    }
+
+    public boolean getCategoryVisibility(String category) {
+        for (Item item : items) {
+            if (item.getCategory().equals(category)) {
+                return item.isVisible();
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         new ShoppingFrame();
     }

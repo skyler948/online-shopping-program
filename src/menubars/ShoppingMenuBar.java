@@ -4,11 +4,13 @@ import frames.ShoppingFrame;
 import listeners.ShoppingMenuListener;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class ShoppingMenuBar extends JMenuBar {
 
-    private JMenu categoryMenu, checkoutMenu;
+    private JMenu categoryMenu;
+    private JButton checkoutButton;
     private JCheckBoxMenuItem[] categories;
     private JLabel subtotalLabel;
 
@@ -26,11 +28,14 @@ public class ShoppingMenuBar extends JMenuBar {
         categoryMenu = new JMenu("Categories");
         categoryMenu.setFont(font);
 
-        checkoutMenu = new JMenu("Checkout");
-        checkoutMenu.setFont(font);
+        checkoutButton = new JButton("Checkout");
+        checkoutButton.setFont(font);
+        checkoutButton.setOpaque(true);
+        checkoutButton.setBorderPainted(false);
+        checkoutButton.setContentAreaFilled(false);
 
         add(categoryMenu, BorderLayout.WEST);
-        add(checkoutMenu, BorderLayout.EAST);
+        add(checkoutButton, BorderLayout.EAST);
 
         subtotalLabel = new JLabel("Subtotal: $0.00", JLabel.CENTER);
         subtotalLabel.setFont(font);
@@ -44,13 +49,14 @@ public class ShoppingMenuBar extends JMenuBar {
                 new JCheckBoxMenuItem("Video Game", true)
         };
 
-        listener = new ShoppingMenuListener(this);
-        checkoutMenu.addMenuListener(listener);
+        listener = new ShoppingMenuListener(this, shoppingFrame);
 
         for (JCheckBoxMenuItem category : categories) {
             category.addActionListener(listener);
+            category.setFont(new Font("Arial", Font.BOLD, 14));
             categoryMenu.add(category);
         }
+        checkoutButton.addActionListener(listener);
     }
 
     public void updateSubtotalLabel() {
@@ -61,8 +67,8 @@ public class ShoppingMenuBar extends JMenuBar {
         return categories;
     }
 
-    public JMenu getCheckoutMenu() {
-        return checkoutMenu;
+    public JButton getCheckoutButton() {
+        return checkoutButton;
     }
 
 }
