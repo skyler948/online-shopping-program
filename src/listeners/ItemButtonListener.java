@@ -1,5 +1,6 @@
 package listeners;
 
+import frames.InfoFrame;
 import frames.ShoppingFrame;
 import items.Item;
 import menubars.ShoppingMenuBar;
@@ -11,6 +12,7 @@ public class ItemButtonListener implements ActionListener {
 
     private Item item;
     private ShoppingFrame shoppingFrame;
+    private InfoFrame infoFrame;
 
     public ItemButtonListener(Item item, ShoppingFrame shoppingFrame) {
         this.item = item;
@@ -20,7 +22,11 @@ public class ItemButtonListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == item.getImgButton()) {
-            System.out.println("This button will open a window with more specific information on this item.");
+            if (infoFrame == null) {
+                infoFrame = new InfoFrame(item, shoppingFrame);
+            } else if (!infoFrame.isVisible()) {
+                infoFrame = new InfoFrame(item, shoppingFrame);
+            }
         }
 
         if (e.getSource() == item.getAddButton()) {

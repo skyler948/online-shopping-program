@@ -9,14 +9,15 @@ import java.awt.*;
 public abstract class Item extends JPanel {
 
     private static final float MIN_PRICE = 0.01f;
-    private static final float MAX_RATING = 5.f;
+    private static final int MAX_RATING = 5;
     private static final int IMG_BUTTON_SIZE = 135;
     private static final int COUNT_BUTTON_SIZE = 45;
     private static final byte MAX_ITEM_COUNT = 99;
 
     protected String category;
 
-    private ImageIcon img;
+    private ImageIcon image;
+    private int imageId;
 
     protected ShoppingFrame shoppingFrame;
     protected String name;
@@ -35,7 +36,8 @@ public abstract class Item extends JPanel {
 
     public Item(ShoppingFrame shoppingFrame, int img, String name, float price, float weightKilograms, float rating) {
         this.shoppingFrame = shoppingFrame;
-        this.img = shoppingFrame.getItemImages().getIcons()[Math.max(0, img)];
+        this.imageId = Math.clamp(img, 0, shoppingFrame.getItemImages().getIcons().length - 1);
+        this.image = shoppingFrame.getItemImages().getIcons()[imageId];
         this.name = name;
         this.price = Math.max(MIN_PRICE, price);
         this.weightKilograms = Math.max(0.f, weightKilograms);
@@ -57,7 +59,7 @@ public abstract class Item extends JPanel {
 
         gbc.gridy = 1;
 
-        imgButton = new JButton(this.img);
+        imgButton = new JButton(this.image);
         imgButton.setPreferredSize(new Dimension(IMG_BUTTON_SIZE, IMG_BUTTON_SIZE));
         add(imgButton, gbc);
 
@@ -66,12 +68,10 @@ public abstract class Item extends JPanel {
         JPanel infoPanel = new JPanel(new BorderLayout());
         infoPanel.setPreferredSize(new Dimension(IMG_BUTTON_SIZE, 15));
 
-        JLabel priceLabel = new JLabel(String.format("$%.2f", price));
+        JLabel priceLabel = new JLabel(getPriceFormatted());
         infoPanel.add(priceLabel, BorderLayout.WEST);
 
-        String weight = (weightKilograms >= 1) ?
-                String.format("%.2fkg", weightKilograms) : String.format("%.2fg", weightKilograms * 1000);
-        JLabel weightLabel = new JLabel((weightKilograms != 0) ? weight : "N/A");
+        JLabel weightLabel = new JLabel(getWeightFormatted());
         infoPanel.add(weightLabel, BorderLayout.EAST);
 
         gbc.gridy = 2;
@@ -148,7 +148,7 @@ public abstract class Item extends JPanel {
         return rating;
     }
 
-    public static float getMaxRating() {
+    public static int getMaxRating() {
         return MAX_RATING;
     }
 
@@ -162,6 +162,24 @@ public abstract class Item extends JPanel {
 
     public JButton getSubtractButton() {
         return subtractButton;
+    }
+
+    public ImageIcon getImage() {
+        return image;
+    }
+
+    public int getImageId() {
+        return imageId;
+    }
+
+    public String getPriceFormatted() {
+        return String.format("$%.2f", price);
+    }
+
+    public String getWeightFormatted() {
+        String weight = (weightKilograms >= 1) ?
+                String.format("%.2fkg", weightKilograms) : String.format("%.2fg", weightKilograms * 1000);
+        return (weightKilograms != 0) ? weight : "N/A";
     }
 
 }
