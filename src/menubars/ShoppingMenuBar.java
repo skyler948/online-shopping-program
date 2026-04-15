@@ -49,7 +49,7 @@ public class ShoppingMenuBar extends JMenuBar {
                 new JCheckBoxMenuItem("Video Game", true)
         };
 
-        listener = new ShoppingMenuListener(this, shoppingFrame);
+        listener = new ShoppingMenuListener(shoppingFrame);
 
         for (JCheckBoxMenuItem category : categories) {
             category.addActionListener(listener);

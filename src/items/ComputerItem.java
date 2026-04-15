@@ -1,8 +1,6 @@
 package items;
 
-import menubars.ShoppingMenuBar;
-
-import javax.swing.*;
+import frames.ShoppingFrame;
 
 public class ComputerItem extends Item {
 
@@ -15,9 +13,9 @@ public class ComputerItem extends Item {
     private String os;
     private String manufacturer;
 
-    public ComputerItem(ShoppingMenuBar bar, ImageIcon img, String name, float price, float weightKilograms,
+    public ComputerItem(ShoppingFrame shoppingFrame, int img, String name, float price, float weightKilograms, float rating,
                         String cpu, String gpu, float ramGigabytes, String ramType, float storageGigabytes, String storageType, String os, String manufacturer) {
-        super(bar, img, name, price, weightKilograms);
+        super(shoppingFrame, img, name, price, weightKilograms, rating);
         this.cpu = cpu;
         this.gpu = gpu;
         this.ramGigabytes = Math.max(0.f, ramGigabytes);

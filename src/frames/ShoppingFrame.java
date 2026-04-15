@@ -11,27 +11,31 @@ public class ShoppingFrame extends JFrame {
 
     private Item[] items;
 
+    private ImageSheet itemImages, starImages;
+    private ShoppingMenuBar bar;
+
     public ShoppingFrame() {
         setSize(1280, 720);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Online Shopping Platform");
         setLocationRelativeTo(null);
 
-        ImageSheet images = new ImageSheet(125, "/sheet.png");
+        itemImages = new ImageSheet(125, "/sheet.png");
+        starImages = new ImageSheet(64, "/stars.png"); // TODO: Info frame will show this
 
-        ShoppingMenuBar bar = new ShoppingMenuBar(this);
+        bar = new ShoppingMenuBar(this);
 
         items = new Item[]{
-                new FoodItem(bar, images.getIcons()[0], "Apple", 0.99f, 0.017f, 150,
+                new FoodItem(this, 0, "Apple", 0.99f, 0.017f, 4.5f, 150,
                         2.f, 0.f, 0.f, 0.f, 0.f, 0.f, "1 Apple"),
-                new FoodItem(bar, images.getIcons()[1], "Pear", 1.59f, 2.3f, 150,
+                new FoodItem(this, 1, "Pear", 1.59f, 2.3f, 4.4f, 150,
                         2.f, 0.f, 0.f, 0.f, 0.f, 0.f, "1 Pear"),
-                new BookItem(bar, images.getIcons()[2], "The Great Gatsby", 7.99f, 0.1899f,
+                new BookItem(this, 2, "The Great Gatsby", 7.99f, 0.1899f, 3.5f,
                         "F. Scott Fitzgerald", "Fiction", "Paperback", 162, 1925),
-                new VideoGameItem(bar, images.getIcons()[3], "Celeste", 19.99f, 0.f,
+                new VideoGameItem(this, 3, "Celeste", 19.99f, 0.f, 5.f,
                         "Windows, Linux, Mac", "EXOK Games", "Maddy Makes Games Inc.", 2018, 1.2f, "Intel Core i3 M380",
                         "OpenGL 3.0+ Compatible", 2.0f, "Digital"),
-                new ComputerItem(bar, images.getIcons()[4], "Optiplex 760", 684.78f, 5.f,
+                new ComputerItem(this, 4, "Optiplex 760", 684.78f, 5.f, 0.5f,
                         "Intel Core 2 Duo", "Intel HD Graphics", 4.f, "DDR2 Single Channel", 80.f, "Mechanical Hard Drive",
                         "Microsoft Windows 7", "Dell")
         };
@@ -72,6 +76,18 @@ public class ShoppingFrame extends JFrame {
             }
         }
         return false;
+    }
+
+    public ImageSheet getItemImages() {
+        return itemImages;
+    }
+
+    public ImageSheet getStarImages() {
+        return starImages;
+    }
+
+    public ShoppingMenuBar getBar() {
+        return bar;
     }
 
     public static void main(String[] args) {

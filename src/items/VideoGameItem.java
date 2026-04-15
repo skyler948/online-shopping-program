@@ -1,8 +1,6 @@
 package items;
 
-import menubars.ShoppingMenuBar;
-
-import javax.swing.*;
+import frames.ShoppingFrame;
 
 public class VideoGameItem extends Item {
 
@@ -16,10 +14,10 @@ public class VideoGameItem extends Item {
     private float minimumRAMGigabytes;
     private String releaseType;
 
-    public VideoGameItem(ShoppingMenuBar bar, ImageIcon img, String name, float price, float weightKilograms,
+    public VideoGameItem(ShoppingFrame shoppingFrame, int img, String name, float price, float weightKilograms, float rating,
                          String platform, String developer, String publisher, int year, float sizeGigabytes, String minimumCPU, String minimumGPU, float minimumRAMGigabytes,
                          String releaseType) {
-        super(bar, img, name, price, weightKilograms);
+        super(shoppingFrame, img, name, price, weightKilograms, rating);
         this.platform = platform;
         this.developer = developer;
         this.publisher = publisher;

@@ -1,8 +1,6 @@
 package items;
 
-import menubars.ShoppingMenuBar;
-
-import javax.swing.*;
+import frames.ShoppingFrame;
 
 public class BookItem extends Item {
 
@@ -12,9 +10,9 @@ public class BookItem extends Item {
     private int pages;
     private int year;
 
-    public BookItem(ShoppingMenuBar bar, ImageIcon img, String name, float price, float weightKilograms,
+    public BookItem(ShoppingFrame shoppingFrame, int img, String name, float price, float weightKilograms, float rating,
                     String author, String genre, String type, int pages, int year) {
-        super(bar, img, name, price, weightKilograms);
+        super(shoppingFrame, img, name, price, weightKilograms, rating);
         this.author = author;
         this.genre = genre;
         this.type = type;

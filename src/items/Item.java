@@ -1,7 +1,7 @@
 package items;
 
+import frames.ShoppingFrame;
 import listeners.ItemButtonListener;
-import menubars.ShoppingMenuBar;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +9,7 @@ import java.awt.*;
 public abstract class Item extends JPanel {
 
     private static final float MIN_PRICE = 0.01f;
+    private static final float MAX_RATING = 5.f;
     private static final int IMG_BUTTON_SIZE = 135;
     private static final int COUNT_BUTTON_SIZE = 45;
     private static final byte MAX_ITEM_COUNT = 99;
@@ -17,9 +18,11 @@ public abstract class Item extends JPanel {
 
     private ImageIcon img;
 
+    protected ShoppingFrame shoppingFrame;
     protected String name;
     protected float price;
     protected float weightKilograms;
+    protected float rating;
 
     private JButton imgButton;
     private JButton subtractButton, addButton;
@@ -30,13 +33,13 @@ public abstract class Item extends JPanel {
 
     private byte itemCount;
 
-    private ShoppingMenuBar bar;
-
-    public Item(ShoppingMenuBar bar, ImageIcon img, String name, float price, float weightKilograms) {
-        this.img = img;
+    public Item(ShoppingFrame shoppingFrame, int img, String name, float price, float weightKilograms, float rating) {
+        this.shoppingFrame = shoppingFrame;
+        this.img = shoppingFrame.getItemImages().getIcons()[Math.max(0, img)];
         this.name = name;
         this.price = Math.max(MIN_PRICE, price);
         this.weightKilograms = Math.max(0.f, weightKilograms);
+        this.rating = Math.clamp(rating, 0.f, MAX_RATING);
 
         setLayout(new GridBagLayout());
 
@@ -54,7 +57,7 @@ public abstract class Item extends JPanel {
 
         gbc.gridy = 1;
 
-        imgButton = new JButton(img);
+        imgButton = new JButton(this.img);
         imgButton.setPreferredSize(new Dimension(IMG_BUTTON_SIZE, IMG_BUTTON_SIZE));
         add(imgButton, gbc);
 
@@ -103,7 +106,7 @@ public abstract class Item extends JPanel {
 
         // -- Listeners --
 
-        listener = new ItemButtonListener(this, bar);
+        listener = new ItemButtonListener(this, shoppingFrame);
         imgButton.addActionListener(listener);
         addButton.addActionListener(listener);
         subtractButton.addActionListener(listener);
@@ -115,6 +118,10 @@ public abstract class Item extends JPanel {
         itemCount += amount;
         itemCount = (byte) Math.clamp(itemCount, 0, MAX_ITEM_COUNT);
         itemCountLabel.setText(String.valueOf(itemCount));
+    }
+
+    public ShoppingFrame getShoppingFrame() {
+        return shoppingFrame;
     }
 
     public float getTotalPrice() {
@@ -135,6 +142,14 @@ public abstract class Item extends JPanel {
 
     public float getWeightKilograms() {
         return weightKilograms;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public static float getMaxRating() {
+        return MAX_RATING;
     }
 
     public JButton getImgButton() {

@@ -1,6 +1,6 @@
 package items;
 
-import menubars.ShoppingMenuBar;
+import frames.ShoppingFrame;
 
 import javax.swing.*;
 
@@ -15,9 +15,9 @@ public class FoodItem extends Item {
     private float cholesterolMilligrams;
     private String servingSize;
 
-    public FoodItem(ShoppingMenuBar bar, ImageIcon img, String name, float price, float weightKilograms,
+    public FoodItem(ShoppingFrame shoppingFrame, int img, String name, float price, float weightKilograms, float rating,
                     int calories, float sugarGrams, float proteinGrams, float fatGrams, float carbohydrateGrams, float sodiumMilligrams, float cholesterolMilligrams, String servingSize) {
-        super(bar, img, name, price, weightKilograms);
+        super(shoppingFrame, img, name, price, weightKilograms, rating);
         this.calories = Math.max(0, calories);
         this.sugarGrams = Math.max(0.f, sugarGrams);
         this.proteinGrams = Math.max(0.f, proteinGrams);
