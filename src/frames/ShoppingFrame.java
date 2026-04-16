@@ -21,7 +21,7 @@ public class ShoppingFrame extends JFrame {
         setLocationRelativeTo(null);
 
         itemImages = new ImageSheet(125, "/sheet.png");
-        starImages = new ImageSheet(64, "/stars.png"); // TODO: Info frame will show this
+        starImages = new ImageSheet(64, "/stars.png");
 
         bar = new ShoppingMenuBar(this);
 
@@ -37,7 +37,13 @@ public class ShoppingFrame extends JFrame {
                         "OpenGL 3.0+ Compatible", 2.0f, "Digital"),
                 new ComputerItem(this, 4, "Optiplex 760", 684.78f, 5.f, 0.5f,
                         "Intel Core 2 Duo", "Intel HD Graphics", 4.f, "DDR2 Single Channel", 80.f, "Mechanical Hard Drive",
-                        "Microsoft Windows 7", "Dell")
+                        "Microsoft Windows 7", "Dell"),
+                new MovieItem(this, 5, "Oppenheimer", 18.99f, 0.1f, 4.5f,
+                        "Christopher Nolan", "Christopher Nolan, Kai Bird, Martin Sherwin", "Cillian Murphy, Emily Blunt, Matt Damon",
+                        "R", 2023, 3.f, "Blu-Ray"),
+                new SoftwareItem(this, 6, "Windows 1.0", 99.99f, 0.25f, 2.5f,
+                        "Microsoft", "Closed source", "Proprietary", "MS-DOS", "x86-32, x86-16", "Operating Environment",
+                        "November 1985", "April 1987"),
         };
 
         setJMenuBar(bar);

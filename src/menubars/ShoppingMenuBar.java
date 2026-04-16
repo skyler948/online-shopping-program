@@ -46,6 +46,8 @@ public class ShoppingMenuBar extends JMenuBar {
                 new JCheckBoxMenuItem("Book", true),
                 new JCheckBoxMenuItem("Computer", true),
                 new JCheckBoxMenuItem("Food", true),
+                new JCheckBoxMenuItem("Movie", true),
+                new JCheckBoxMenuItem("Software", true),
                 new JCheckBoxMenuItem("Video Game", true)
         };
 
