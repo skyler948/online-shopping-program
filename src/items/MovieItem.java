@@ -28,8 +28,33 @@ public class MovieItem extends Item {
 
     @Override
     public String getInformation() {
-        return String.format("Director(s): %s\nWriter(s): %s\nStar(s): %s\nRated %s\nYear: %d\nRelease Type: %s",
-                directors, writers, stars, ageRating, year, releaseType);
+        return String.format("Director(s): %s\nWriter(s): %s\nStar(s): %s\nRated %s\nYear: %d\nRuntime: %s\nRelease Type: %s",
+                directors, writers, stars, ageRating, year, getRuntimeFormatted(), releaseType);
+    }
+
+    public String getRuntimeFormatted() {
+        StringBuilder formatted = new StringBuilder();
+
+        int runtimeHour = (int) runtimeHours;
+
+        formatted.append((runtimeHour == 1) ? String.format("%d hour", runtimeHour) : String.format("%d hours", runtimeHour));
+
+        if (runtimeHour == runtimeHours) {
+            return formatted.toString();
+        }
+
+        float runtimeMinutes = (runtimeHours - runtimeHour) * 60;
+        int runtimeMinute = (int) runtimeMinutes;
+
+        formatted.append((runtimeMinute == 1) ? String.format(", %d minute", runtimeMinute) : String.format(", %d minutes", runtimeMinute));
+
+        if (runtimeMinute == runtimeMinutes) {
+            return formatted.toString();
+        }
+
+        int runtimeSecond = (int) ((runtimeMinutes - runtimeMinute) * 60);
+
+        return formatted.append((runtimeSecond == 1) ? String.format(", %d second", runtimeSecond) : String.format(", %d seconds", runtimeSecond)).toString();
     }
 
     public String getDirectors() {
