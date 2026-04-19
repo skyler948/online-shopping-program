@@ -2,6 +2,7 @@ package frames;
 
 import image.ImageSheet;
 import items.*;
+import layouts.WrapLayout;
 import menubars.ShoppingMenuBar;
 
 import javax.swing.*;
@@ -44,17 +45,24 @@ public class ShoppingFrame extends JFrame {
                 new SoftwareItem(this, 6, "Windows 1.0", 99.99f, 0.25f, 2.5f,
                         "Microsoft", "Closed source", "Proprietary", "MS-DOS", "x86-32, x86-16", "Operating Environment",
                         "November 1985", "April 1987"),
+                new SoftwareItem(this, 6, "Windows 1.0", 99.99f, 0.25f, 2.5f,
+                        "Microsoft", "Closed source", "Proprietary", "MS-DOS", "x86-32, x86-16", "Operating Environment",
+                        "November 1985", "April 1987"),
         };
 
         setJMenuBar(bar);
 
-        JPanel itemPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 10, 10));
+        JPanel itemPanel = new JPanel(new WrapLayout(WrapLayout.CENTER, 10, 10));
 
         for (Item item : items) {
             itemPanel.add(item);
         }
 
-        add(itemPanel, BorderLayout.CENTER);
+        JScrollPane scrollPane = new JScrollPane(itemPanel);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+        add(scrollPane, BorderLayout.CENTER);
 
         setVisible(true);
     }
