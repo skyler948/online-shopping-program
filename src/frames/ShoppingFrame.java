@@ -1,5 +1,6 @@
 package frames;
 
+import file.CartSave;
 import image.ImageSheet;
 import items.*;
 import layouts.WrapLayout;
@@ -14,6 +15,8 @@ public class ShoppingFrame extends JFrame {
 
     private ImageSheet itemImages, starImages;
     private ShoppingMenuBar bar;
+
+    private CartSave cartSave;
 
     public ShoppingFrame() {
         setSize(1280, 720);
@@ -49,6 +52,11 @@ public class ShoppingFrame extends JFrame {
                         "Microsoft", "Closed source", "Proprietary", "MS-DOS", "x86-32, x86-16", "Operating Environment",
                         "November 1985", "April 1987"),
         };
+
+        cartSave = new CartSave(this);
+        bar.updateSubtotalLabel();
+
+        addWindowListener(cartSave);
 
         setJMenuBar(bar);
 
@@ -90,6 +98,14 @@ public class ShoppingFrame extends JFrame {
             }
         }
         return false;
+    }
+
+    public void setItemCount(byte count, int item) {
+        items[item].modifyItemCount(count);
+    }
+
+    public Item[] getItems() {
+        return items;
     }
 
     public ImageSheet getItemImages() {

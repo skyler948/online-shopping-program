@@ -120,6 +120,10 @@ public abstract class Item extends JPanel {
         itemCountLabel.setText(String.valueOf(itemCount));
     }
 
+    public byte getItemCount() {
+        return itemCount;
+    }
+
     public ShoppingFrame getShoppingFrame() {
         return shoppingFrame;
     }
