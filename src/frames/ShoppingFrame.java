@@ -1,6 +1,6 @@
 package frames;
 
-import file.CartSave;
+import file.CartManager;
 import image.ImageSheet;
 import items.*;
 import layouts.WrapLayout;
@@ -16,11 +16,11 @@ public class ShoppingFrame extends JFrame {
     private ImageSheet itemImages, starImages;
     private ShoppingMenuBar bar;
 
-    private CartSave cartSave;
+    private CartManager cartManager;
 
     public ShoppingFrame() {
         setSize(1280, 720);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setTitle("Online Shopping Platform");
         setLocationRelativeTo(null);
 
@@ -53,10 +53,10 @@ public class ShoppingFrame extends JFrame {
                         "November 1985", "April 1987"),
         };
 
-        cartSave = new CartSave(this);
+        cartManager = new CartManager(this);
         bar.updateSubtotalLabel();
 
-        addWindowListener(cartSave);
+        addWindowListener(cartManager);
 
         setJMenuBar(bar);
 

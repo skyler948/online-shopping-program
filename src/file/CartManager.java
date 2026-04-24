@@ -11,7 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class CartSave implements WindowListener {
+public class CartManager implements WindowListener {
 
     private static final String PATH = "cart.txt";
 
@@ -19,7 +19,7 @@ public class CartSave implements WindowListener {
 
     private ShoppingFrame shoppingFrame;
 
-    public CartSave(ShoppingFrame shoppingFrame) {
+    public CartManager(ShoppingFrame shoppingFrame) {
         this.shoppingFrame = shoppingFrame;
         this.cartFile = new File(PATH);
 
@@ -64,6 +64,8 @@ public class CartSave implements WindowListener {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+        System.out.println("Cart successfully saved.");
     }
 
     private void read() {
@@ -80,6 +82,29 @@ public class CartSave implements WindowListener {
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
+
+        System.out.println("Cart file read.");
+    }
+
+    private boolean hasCartChanged() {
+        try {
+            Scanner scanner = new Scanner(cartFile);
+
+            while (scanner.hasNextLine()) {
+                String[] data = scanner.nextLine().trim().split("=");
+
+                int i = Integer.parseInt(data[0]);
+                byte count = Byte.parseByte(data[1]);
+
+                if (shoppingFrame.getItems()[i].getItemCount() != count) return true;
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        return false;
     }
 
     @Override
@@ -87,10 +112,22 @@ public class CartSave implements WindowListener {
 
     @Override
     public void windowClosing(WindowEvent e) {
-        int confirm = JOptionPane.showConfirmDialog(shoppingFrame, "Save cart?", "Confirmation", JOptionPane.YES_NO_OPTION);
+        // ShoppingFrame having DO_NOTHING_ON_CLOSE is required for this logic to work properly
+        if (!hasCartChanged()) {
+            System.exit(0);
+        }
 
-        if (confirm == JOptionPane.YES_OPTION) {
-            save();
+        int confirm = JOptionPane.showConfirmDialog(shoppingFrame, "You have unsaved changes in your cart!\nWould you like to save?",
+                "Confirmation", JOptionPane.YES_NO_CANCEL_OPTION);
+
+        switch (confirm) {
+            case JOptionPane.YES_OPTION:
+                save();
+                System.exit(1);
+                break;
+            case JOptionPane.NO_OPTION:
+                System.exit(2);
+                break;
         }
     }
 
