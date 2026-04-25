@@ -177,7 +177,7 @@ public abstract class Item extends JPanel {
     }
 
     public String getPriceFormatted() {
-        return String.format("$%.2f", price);
+        return String.format("$%,.2f", price);
     }
 
     public String getWeightFormatted() {

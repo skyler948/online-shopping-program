@@ -14,6 +14,8 @@ public class VideoGameItem extends Item {
     private float minimumRAMGigabytes;
     private String releaseType;
 
+    private boolean unknownSpecs;
+
     public VideoGameItem(ShoppingFrame shoppingFrame, int img, String name, float price, float weightKilograms, float rating,
                          String platform, String developer, String publisher, int year, float sizeGigabytes, String minimumCPU, String minimumGPU, float minimumRAMGigabytes,
                          String releaseType) {
@@ -28,12 +30,35 @@ public class VideoGameItem extends Item {
         this.minimumRAMGigabytes = Math.max(0.f, minimumRAMGigabytes);
         this.releaseType = releaseType;
 
+        unknownSpecs = false;
+
+        category = "Video Game";
+    }
+
+    public VideoGameItem(ShoppingFrame shoppingFrame, int img, String name, float price, float weightKilograms, float rating,
+                         String platform, String developer, String publisher, int year, float sizeGigabytes, String releaseType) {
+        super(shoppingFrame, img, name, price, weightKilograms, rating);
+        this.platform = platform;
+        this.developer = developer;
+        this.publisher = publisher;
+        this.year = year;
+        this.sizeGigabytes = Math.max(0.f, sizeGigabytes);
+        this.releaseType = releaseType;
+
+        unknownSpecs = true;
+
         category = "Video Game";
     }
 
     @Override
     public String getInformation() {
-        return String.format("Platform: %s\nDeveloper: %s\nPublisher: %s\nYear: %d\nSize: %s\nMinimum CPU: %s\nMinimum GPU: %s\nMinimum RAM: %s\nRelease Type: %s",
+        return (unknownSpecs) ?
+                String.format("Platform: %s\nDeveloper: %s\nPublisher: %s\nYear: %d\nSize: %s\nRelease Type: %s",
+                platform, developer, publisher, year,
+                (sizeGigabytes >= 1) ? String.format("%.2fGB", sizeGigabytes) : String.format("%.2fMB", sizeGigabytes * 1000),
+                releaseType) :
+
+                String.format("Platform: %s\nDeveloper: %s\nPublisher: %s\nYear: %d\nSize: %s\nMinimum CPU: %s\nMinimum GPU: %s\nMinimum RAM: %s\nRelease Type: %s",
                 platform, developer, publisher, year,
                 (sizeGigabytes >= 1) ? String.format("%.2fGB", sizeGigabytes) : String.format("%.2fMB", sizeGigabytes * 1000),
                 minimumCPU, minimumGPU,
