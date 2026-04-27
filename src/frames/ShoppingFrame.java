@@ -22,6 +22,7 @@ public class ShoppingFrame extends JFrame {
         setSize(1280, 720);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setTitle("Online Shopping Platform");
+        setIconImage(new ImageIcon("res/bag.png").getImage());
         setLocationRelativeTo(null);
 
         itemImages = new ImageSheet(125, "/sheet.png");
@@ -30,6 +31,8 @@ public class ShoppingFrame extends JFrame {
         bar = new ShoppingMenuBar(this);
 
         items = new Item[]{
+                new FoodItem(this,16,"Water",0.20f,0.51f,4.7f,0,0,
+                        0,0,0,0,0,"1 Bottle"),
                 new FoodItem(this, 0, "Apple", 0.99f, 0.017f, 4.5f, 94,
                         18.9f, 0.5f, 0.3f, 25.1f, 1.3f, 0.f, "1 Apple"),
                 new ComputerItem(this, 13, "Area-51 Desktop", 6999.99f, 35.f, 0.f,

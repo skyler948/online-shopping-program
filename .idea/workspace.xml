@@ -4,26 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7918a998-1e14-4660-8f72-1073925b13bf" name="Changes" comment="Added more item types">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="050245f0-09d0-4902-aa5c-fb388c09d3f0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/sheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sheet.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frames/InfoFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/InfoFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frames/ShoppingFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/ShoppingFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listeners/ShoppingMenuListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/listeners/ShoppingMenuListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,90 +23,52 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;skyler948&quot;
+    &quot;assignee&quot;: &quot;jayfrial10&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/skyler948/online-shopping-program&quot;,
-    &quot;accountId&quot;: &quot;c0613297-d7bc-4de7-be33-175a0e64b49f&quot;
+    &quot;accountId&quot;: &quot;c3de1dd1-b238-486b-a8c8-e7513c267883&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="3CJkupeKtIxrrPZ6pOdF4fG2Bwl" />
+  <component name="ProjectId" id="3CMKUMP1cZi9lbgtM7w6OigtDH0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.ShoppingProgram.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/skyler/Documents/Programming/Java Main",
-    "settings.editor.selected.configurable": "preferences.general"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ShoppingFrame.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration name="ShoppingProgram" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="frames.ShoppingFrame" />
-      <module name="online-shopping-program" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
       </set>
     </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7918a998-1e14-4660-8f72-1073925b13bf" name="Changes" comment="" />
-      <created>1764122743794</created>
+      <changelist id="050245f0-09d0-4902-aa5c-fb388c09d3f0" name="Changes" comment="" />
+      <created>1776190013844</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1764122743794</updated>
+      <updated>1776190013844</updated>
     </task>
-    <task id="LOCAL-00001" summary="Add ImageSheet">
-      <option name="closed" value="true" />
-      <created>1776112694219</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1776112694219</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Add more attributes and functions to FoodItem">
-      <option name="closed" value="true" />
-      <created>1776129557302</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1776129557302</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Added more item types">
-      <option name="closed" value="true" />
-      <created>1776181535972</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1776181535972</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add ImageSheet" />
-    <MESSAGE value="Add more attributes and functions to FoodItem" />
-    <MESSAGE value="Added more item types" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more item types" />
   </component>
 </project>

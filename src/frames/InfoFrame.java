@@ -31,6 +31,7 @@ public class InfoFrame extends JFrame {
 
         setSize(550, 500);
         setTitle("Information");
+        setIconImage(new ImageIcon("res/info.png").getImage());
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setAlwaysOnTop(true);

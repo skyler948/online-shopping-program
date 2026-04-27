@@ -1,5 +1,6 @@
 package listeners;
 
+import frames.CheckoutFrame;
 import frames.ShoppingFrame;
 import menubars.ShoppingMenuBar;
 
@@ -24,7 +25,7 @@ public class ShoppingMenuListener implements ActionListener {
         }
 
         if (e.getSource() == shoppingFrame.getBar().getCheckoutButton()) {
-            System.out.println("This will create the checkout window.");
+            new CheckoutFrame(shoppingFrame);
         }
     }
 
