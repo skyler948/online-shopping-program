@@ -13,7 +13,7 @@ public class ShoppingFrame extends JFrame {
 
     private Item[] items;
 
-    private ImageSheet itemImages, starImages;
+    private ImageSheet itemImages, starImages, iconImages;
     private ShoppingMenuBar bar;
 
     private CartManager cartManager;
@@ -22,11 +22,13 @@ public class ShoppingFrame extends JFrame {
         setSize(1280, 720);
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         setTitle("Online Shopping Platform");
-        setIconImage(new ImageIcon("res/bag.png").getImage());
         setLocationRelativeTo(null);
 
         itemImages = new ImageSheet(125, "/sheet.png");
         starImages = new ImageSheet(64, "/stars.png");
+        iconImages = new ImageSheet(128, "/icons.png");
+
+        setIconImage(iconImages.getIcons()[0].getImage());
 
         bar = new ShoppingMenuBar(this);
 
@@ -135,6 +137,10 @@ public class ShoppingFrame extends JFrame {
 
     public ImageSheet getStarImages() {
         return starImages;
+    }
+
+    public ImageSheet getIconImageSheet() {
+        return iconImages;
     }
 
     public ShoppingMenuBar getBar() {

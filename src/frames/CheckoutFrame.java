@@ -6,13 +6,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CheckoutFrame extends JFrame {
+
     private ShoppingFrame shoppingFrame;
 
     public CheckoutFrame(ShoppingFrame shoppingFrame) {
         this.shoppingFrame = shoppingFrame;
         setSize(600,720);
         setTitle("Checkout");
-        setIconImage(new ImageIcon("res/card.png").getImage());
+        setIconImage(shoppingFrame.getIconImageSheet().getIcons()[2].getImage());
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
