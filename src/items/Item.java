@@ -186,4 +186,10 @@ public abstract class Item extends JPanel {
         return (weightKilograms != 0) ? weight : "N/A";
     }
 
+    public String getWeightFormattedTotal() {
+        String weight = (weightKilograms * itemCount >= 1) ?
+                String.format("%.2fkg", weightKilograms * itemCount) : String.format("%.2fg", weightKilograms * 1000 * itemCount);
+        return (weightKilograms != 0) ? weight : "N/A";
+    }
+
 }
