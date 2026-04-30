@@ -65,6 +65,8 @@ public class ShoppingFrame extends JFrame {
                         "Nintendo Entertainment System", "Nintendo R&D4", "Nintendo", 1985, 0.00004f, "Physical"),
                 new BookItem(this, 2, "The Great Gatsby", 7.99f, 0.1899f, 3.5f,
                         "F. Scott Fitzgerald", "Fiction", "Paperback", 162, 1925),
+                new BookItem(this, 23, "Of Mice and Men", 10.97f, 0.084f, 4.1f,
+                        "John Steinbeck", "Thriller", "Paperback", 107, 1993),
                 new MovieItem(this, 5, "Oppenheimer", 18.99f, 0.1f, 4.5f,
                         "Christopher Nolan", "Christopher Nolan, Kai Bird, Martin Sherwin", "Cillian Murphy, Emily Blunt, Matt Damon",
                         "R", 2023, 3.f, "Blu-Ray"),
@@ -73,6 +75,12 @@ public class ShoppingFrame extends JFrame {
                         "Microsoft Windows 7", "Dell"),
                 new VideoGameItem(this, 18, "The Last of Us", 59.99f, 0.5f, 4.6f,
                         "Sony PlayStation 3", "Naughty Dog", "Sony Computer Entertainment", 2013, 3.2f, "Physical"),
+                new MovieItem(this, 22, "Up", 27.99f, .04f, 4.8f,
+                        "Pete Docter", "Pete Doctor, Bob Peterson, Tom McCarthy", "Ed Anser & Christopher Plummer",
+                        "PG", 2009, 1.6f, "DVD"),
+                new MovieItem(this, 21, "Wall-E", 19.49f, .01f, 3.9f,
+                        "Andrew Stanton", "Andrew Stanton & Pete Docter", "Ben Burrt & Elissa Knight", "G", 2008,
+                        1.633f, "Blu-Ray"),
                 new FoodItem(this,16,"Water",0.20f,0.51f,4.7f,0,0,
                         0,0,0,0,0,"1 Bottle"),
                 new FoodItem(this, 12, "Whoppers", 1.f, .1f, 4.f, 140,
@@ -80,6 +88,9 @@ public class ShoppingFrame extends JFrame {
                 new SoftwareItem(this, 6, "Windows 1.0", 99.99f, 0.25f, 2.5f,
                         "Microsoft", "Closed source", "Proprietary", "MS-DOS", "x86-32, x86-16", "Operating Environment",
                         "November 1985", "April 1987"),
+                new SoftwareItem(this, 20, "Windows 7 Pro", 129.99f, .2f, 3.9f,
+                        "Microsoft", "Closed source", "Proprietary", "Windows", "IA-32, x86-32, x86-64", "Operating System",
+                        "October 2009", "January 2023"),
         };
 
         cartManager = new CartManager(this);

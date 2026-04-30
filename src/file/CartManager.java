@@ -90,13 +90,23 @@ public class CartManager implements WindowListener {
         try {
             Scanner scanner = new Scanner(cartFile);
 
+            int lastCount = 0;
+
             while (scanner.hasNextLine()) {
                 String[] data = scanner.nextLine().trim().split("=");
 
                 int i = Integer.parseInt(data[0]);
                 byte count = Byte.parseByte(data[1]);
 
+                lastCount = i;
+
                 if (shoppingFrame.getItems()[i].getItemCount() != count) return true;
+            }
+
+            if (lastCount != shoppingFrame.getItems().length - 1) {
+                for (int i = lastCount; i < shoppingFrame.getItems().length; i++) {
+                    if (shoppingFrame.getItems()[i].getItemCount() != 0) return true;
+                }
             }
 
             scanner.close();
