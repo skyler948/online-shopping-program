@@ -1,6 +1,7 @@
 package file;
 
 import frames.ShoppingFrame;
+import frames.SuccessFrame;
 
 import javax.swing.*;
 import java.awt.event.WindowEvent;
@@ -86,6 +87,23 @@ public class CartManager implements WindowListener {
         System.out.println("Cart file read.");
     }
 
+    private void clear() {
+        try {
+            FileWriter writer = new FileWriter(cartFile);
+
+            for (int i = 0; i < shoppingFrame.getItems().length; i++) {
+                writer.append(String.valueOf(i));
+                writer.append("=0\n");
+            }
+
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("Cart file cleared.");
+    }
+
     private boolean hasCartChanged() {
         try {
             Scanner scanner = new Scanner(cartFile);
@@ -118,7 +136,7 @@ public class CartManager implements WindowListener {
     }
 
     @Override
-    public void windowOpened(WindowEvent e) { }
+    public void windowOpened(WindowEvent e) {}
 
     @Override
     public void windowClosing(WindowEvent e) {
@@ -139,10 +157,13 @@ public class CartManager implements WindowListener {
                 System.exit(2);
                 break;
         }
+
     }
 
     @Override
-    public void windowClosed(WindowEvent e) { }
+    public void windowClosed(WindowEvent e) {
+        clear();
+    }
 
     @Override
     public void windowIconified(WindowEvent e) { }
