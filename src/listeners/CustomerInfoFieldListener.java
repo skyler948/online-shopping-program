@@ -5,6 +5,7 @@ import frames.CheckoutFrame;
 import java.awt.event.*;
 
 public class CustomerInfoFieldListener implements KeyListener {
+
     private CheckoutFrame checkoutFrame;
     
     public CustomerInfoFieldListener(CheckoutFrame checkoutFrame) {
@@ -13,18 +14,12 @@ public class CustomerInfoFieldListener implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        if (e.getSource() == checkoutFrame.getCardNumberField() || e.getSource() == checkoutFrame.getSecurityCodeField()) {
-            try {
-                Integer.parseInt(String.valueOf(e.getKeyChar()));
-            } catch (NumberFormatException _) {
-                e.consume();
-            }
-        }
         if (e.getSource() == checkoutFrame.getCardNumberField()) {
             if (checkoutFrame.getCardNumberField().getText().length() >= 16) {
                 e.consume();
             }
         }
+
         if (e.getSource() == checkoutFrame.getCardExpiryField()) {
             if (e.getKeyChar() == '/' && !checkoutFrame.getCardExpiryField().getText().contains("/")) {
                 switch (checkoutFrame.getCardExpiryField().getText().length()) {
@@ -69,13 +64,14 @@ public class CustomerInfoFieldListener implements KeyListener {
                 }
             }
         }
+
         if (e.getSource() == checkoutFrame.getSecurityCodeField()) {
             if (checkoutFrame.getSecurityCodeField().getText().length() >= 4) {
                 e.consume();
             }
         }
-        if (e.getSource() == checkoutFrame.getZipField()) {
 
+        if (e.getSource() == checkoutFrame.getZipField()) {
             try {
                 Integer.parseInt(String.valueOf(e.getKeyChar()));
                 if (checkoutFrame.getZipField().getText().length() == 5) {
@@ -90,7 +86,6 @@ public class CustomerInfoFieldListener implements KeyListener {
                     checkoutFrame.getZipField().setText(checkoutFrame.getZipField().getText().substring(0,5) + "-" +  checkoutFrame.getZipField().getText().substring(5));
                 }
             }
-
         }
     }
 

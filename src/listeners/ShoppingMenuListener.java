@@ -27,6 +27,19 @@ public class ShoppingMenuListener implements ActionListener {
         if (e.getSource() == shoppingFrame.getBar().getCheckoutButton()) {
             new CheckoutFrame(shoppingFrame);
         }
+
+        if (e.getSource() == shoppingFrame.getBar().getSelectAllButton()) {
+            setCategoryState(true);
+        } else if (e.getSource() == shoppingFrame.getBar().getDeselectAllButton()) {
+            setCategoryState(false);
+        }
+    }
+
+    private void setCategoryState(boolean enabled) {
+        for (JCheckBoxMenuItem item : shoppingFrame.getBar().getCategories()) {
+            shoppingFrame.setCategoryVisibility(item.getText(), enabled);
+            item.setState(enabled);
+        }
     }
 
 }

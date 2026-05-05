@@ -3,16 +3,23 @@ package frames;
 import items.Item;
 import listeners.CustomerInfoFieldListener;
 import listeners.PurchaseListener;
+import filters.CharcterDocumentFilter;
 
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
 
 public class CheckoutFrame extends JFrame {
 
+    private static final float DELIVERY_FEE = .2f;
+
     private ShoppingFrame shoppingFrame;
+
     private JTextField cardNumberField, cardExpiryField, securityCodeField, addressField1, addressField2, countryField, cityField, stateField, zipField;
     private JButton purchaseButton;
+
     private CustomerInfoFieldListener infoListener = new CustomerInfoFieldListener(this);
+    private CharcterDocumentFilter integerFilter = new CharcterDocumentFilter();
 
     public CheckoutFrame(ShoppingFrame shoppingFrame) {
         this.shoppingFrame = shoppingFrame;
@@ -121,7 +128,7 @@ public class CheckoutFrame extends JFrame {
 
                 panel.add(itemWeight, gbc);
 
-                deliveryFeeCost += (float) (item.getWeightKilograms() * item.getItemCount() * 0.2);
+                deliveryFeeCost += item.getWeightKilograms() * item.getItemCount() * DELIVERY_FEE;
             }
         }
 
@@ -240,6 +247,7 @@ public class CheckoutFrame extends JFrame {
             cardNumberField = new JTextField();
             cardNumberField.setFont(smallFont);
             cardNumberField.addKeyListener(infoListener);
+            ((AbstractDocument) cardNumberField.getDocument()).setDocumentFilter(integerFilter);
 
             gbc.gridx = 0;
             gbc.gridy++;
@@ -251,6 +259,7 @@ public class CheckoutFrame extends JFrame {
             cardExpiryField.setFont(smallFont);
             cardExpiryField.addKeyListener(infoListener);
             cardExpiryField.setToolTipText("MM/YY");
+            cardExpiryField.setTransferHandler(null);
 
             gbc.gridx = 2;
             gbc.gridwidth = 1;
@@ -261,6 +270,7 @@ public class CheckoutFrame extends JFrame {
             securityCodeField.setFont(smallFont);
             securityCodeField.addKeyListener(infoListener);
             securityCodeField.setToolTipText("The three-digit number on the back or the four-digit number on the front");
+            ((AbstractDocument) securityCodeField.getDocument()).setDocumentFilter(integerFilter);
 
             gbc.gridx = 3;
 
@@ -369,6 +379,7 @@ public class CheckoutFrame extends JFrame {
             zipField = new JTextField();
             zipField.setFont(smallFont);
             zipField.addKeyListener(infoListener);
+            zipField.setTransferHandler(null);
 
             gbc.gridx = 3;
             gbc.gridwidth = 1;
@@ -387,7 +398,7 @@ public class CheckoutFrame extends JFrame {
             panel.add(purchaseButton, gbc);
 
             JScrollPane scrollPane = new JScrollPane(panel);
-            scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+            scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
             scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
             add(scrollPane, BorderLayout.CENTER);

@@ -12,6 +12,7 @@ public class ShoppingMenuBar extends JMenuBar {
     private JMenu categoryMenu;
     private JButton checkoutButton;
     private JCheckBoxMenuItem[] categories;
+    private JMenuItem selectAllButton, deselectAllButton;
     private JLabel subtotalLabel;
 
     private ShoppingMenuListener listener;
@@ -23,13 +24,14 @@ public class ShoppingMenuBar extends JMenuBar {
         setPreferredSize(new Dimension(0, 40));
         setLayout(new BorderLayout());
 
-        Font font = new Font("Arial", Font.PLAIN, 16);
+        Font largeFont = new Font("Arial", Font.PLAIN, 16);
+        Font smallFont = new Font("Arial", Font.BOLD, 14);
 
         categoryMenu = new JMenu("Categories");
-        categoryMenu.setFont(font);
+        categoryMenu.setFont(largeFont);
 
         checkoutButton = new JButton("Checkout");
-        checkoutButton.setFont(font);
+        checkoutButton.setFont(largeFont);
         checkoutButton.setOpaque(true);
         checkoutButton.setBorderPainted(false);
         checkoutButton.setContentAreaFilled(false);
@@ -38,7 +40,7 @@ public class ShoppingMenuBar extends JMenuBar {
         add(checkoutButton, BorderLayout.EAST);
 
         subtotalLabel = new JLabel("Subtotal: $0.00", JLabel.CENTER);
-        subtotalLabel.setFont(font);
+        subtotalLabel.setFont(largeFont);
 
         add(subtotalLabel, BorderLayout.CENTER);
 
@@ -51,14 +53,25 @@ public class ShoppingMenuBar extends JMenuBar {
                 new JCheckBoxMenuItem("Video Game", true)
         };
 
+        selectAllButton = new JMenuItem("Select all");
+        selectAllButton.setFont(smallFont);
+
+        deselectAllButton = new JMenuItem("Deselect all");
+        deselectAllButton.setFont(smallFont);
+
+        categoryMenu.add(selectAllButton);
+        categoryMenu.add(deselectAllButton);
+
         listener = new ShoppingMenuListener(shoppingFrame);
 
         for (JCheckBoxMenuItem category : categories) {
             category.addActionListener(listener);
-            category.setFont(new Font("Arial", Font.BOLD, 14));
+            category.setFont(smallFont);
             categoryMenu.add(category);
         }
         checkoutButton.addActionListener(listener);
+        selectAllButton.addActionListener(listener);
+        deselectAllButton.addActionListener(listener);
     }
 
     public void updateSubtotalLabel() {
@@ -71,6 +84,14 @@ public class ShoppingMenuBar extends JMenuBar {
 
     public JButton getCheckoutButton() {
         return checkoutButton;
+    }
+
+    public JMenuItem getSelectAllButton() {
+        return selectAllButton;
+    }
+
+    public JMenuItem getDeselectAllButton() {
+        return deselectAllButton;
     }
 
 }

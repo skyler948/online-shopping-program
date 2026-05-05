@@ -5,12 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="050245f0-09d0-4902-aa5c-fb388c09d3f0" name="Changes" comment="-Added CheckoutFrame (display only)&#10;-Added icons for each frame&#10;-Added water">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/filters/CharcterDocumentFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/icons.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/icons.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/sheet.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/sheet.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file/CartManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/file/CartManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/file/CartManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/frames/CheckoutFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/frames/InfoFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/frames/ShoppingFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/frames/SuccessFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/icons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/image/ImageSheet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/items/BookItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/items/ComputerItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/items/FoodItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/items/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/items/MovieItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/items/SoftwareItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/items/VideoGameItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/layouts/WrapLayout.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/listeners/CustomerInfoFieldListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/listeners/FinalListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/listeners/ItemButtonListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/listeners/PurchaseListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/listeners/ShoppingMenuListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/menubars/ShoppingMenuBar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/sheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/online-shopping-program/stars.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frames/CheckoutFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/CheckoutFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frames/ShoppingFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames/ShoppingFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listeners/CustomerInfoFieldListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/listeners/CustomerInfoFieldListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listeners/PurchaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/listeners/PurchaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listeners/ShoppingMenuListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/listeners/ShoppingMenuListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/menubars/ShoppingMenuBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/menubars/ShoppingMenuBar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,12 +52,12 @@
     &quot;assignee&quot;: &quot;jayfrial10&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/skyler948/online-shopping-program&quot;,
-    &quot;accountId&quot;: &quot;c3de1dd1-b238-486b-a8c8-e7513c267883&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/skyler948/online-shopping-program",
+    "accountId": "c0613297-d7bc-4de7-be33-175a0e64b49f"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -40,24 +66,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ShoppingFrame.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.OSP.executor": "Run",
+    "Application.ShoppingFrame.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="OSP" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="frames.ShoppingFrame" />
+      <module name="online-shopping-program" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.25557.131" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
       </set>
     </attachedChunks>
   </component>
